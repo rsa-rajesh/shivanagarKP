@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.billDetails.BillDetailsActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_layout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_12sdp"
+                android:paddingBottom="@dimen/_42sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvCalculator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    app:cardBackgroundColor="@color/card_background"
+                    app:cardCornerRadius="@dimen/_4sdp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_12sdp">
+
+                        <TextView
+                            android:id="@+id/tvCalcuTitle1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="अन्तिम ५ वटा बिल विवरण"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/cgType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvCalcuTitle1"
+                            app:selectionRequired="true"
+                            app:singleSelection="true">
+                        </com.google.android.material.chip.ChipGroup>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tiUnit"
+                            style="@style/textViewStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:hint="सदस्य दर्ता नम्बर"
+                            app:layout_constraintTop_toBottomOf="@id/cgType">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etUnit"
+                                android:textColor="@color/white"
+                                android:textCursorDrawable="@null"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="numberDecimal"
+                                android:maxLength="4"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btSubmit"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:backgroundTint="@color/primary_color"
+                            android:paddingHorizontal="@dimen/_22sdp"
+                            android:paddingVertical="@dimen/_8sdp"
+                            android:text="बिल विवरण हेर्नुहोस्"
+                            app:layout_constraintTop_toBottomOf="@id/tiUnit"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/tvBillDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:text="बिल विवरण"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_22sdp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:visibility="gone"
+                    android:id="@+id/cvCommunityRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    app:cardBackgroundColor="@color/card_background"
+                    app:cardCornerRadius="@dimen/_4sdp"
+                    app:cardElevation="4dp"
+                   >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/_12sdp"
+                            android:paddingTop="@dimen/_12sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:text="ग्राहकको नाम :-"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvAddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/_12sdp"
+                            android:paddingTop="@dimen/_12sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:text="ठेगाना :-"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+                        <TextView
+                            android:id="@+id/tvDharaNo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/_12sdp"
+                            android:paddingTop="@dimen/_12sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:text="धारा न. :-"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvAddress" />
+
+                        <TextView
+                            android:id="@+id/tvDharaType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/_12sdp"
+                            android:paddingTop="@dimen/_12sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:text="धाराको प्रकार :-"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvDharaNo" />
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/tableHead1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:background="@color/primary_color"
+                            app:layout_constraintTop_toBottomOf="@id/tvDharaType">
+
+                            <TextView
+                                android:id="@+id/tvDate"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/_4sdp"
+                                android:text="मिति"
+                                android:textColor="@color/background"
+                                android:textSize="@dimen/_12sdp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintWidth_percent=".25" />
+
+                            <TextView
+                                android:id="@+id/tvUnit"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/_4sdp"
+                                android:text="एकाइ"
+                                android:textColor="@color/background"
+                                android:textSize="@dimen/_12sdp"
+                                app:layout_constraintStart_toEndOf="@id/tvDate"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintWidth_percent=".15" />
+
+                            <TextView
+                                android:id="@+id/tvAmt"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/_4sdp"
+                                android:text="रकम"
+                                android:textColor="@color/background"
+                                android:textSize="@dimen/_12sdp"
+                                app:layout_constraintStart_toEndOf="@id/tvUnit"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintWidth_percent=".18" />
+
+                            <TextView
+                                android:id="@+id/tvDisOrFine"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/_4sdp"
+                                android:text="छुट/जरिवाना"
+                                android:maxLines="1"
+                                android:autoSizeMinTextSize="8sp"
+                                android:autoSizeMaxTextSize="12sp"
+                                app:autoSizeTextType="uniform"
+                                android:textColor="@color/background"
+                                app:layout_constraintStart_toEndOf="@id/tvAmt"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintWidth_percent=".22" />
+                            <TextView
+                                android:id="@+id/tvNetAmt"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/_4sdp"
+                                android:text="जम्मा रकम"
+                                android:textColor="@color/background"
+                                android:textSize="@dimen/_12sdp"
+                                app:layout_constraintStart_toEndOf="@id/tvDisOrFine"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintWidth_percent=".2" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvCommunityRate"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toBottomOf="@id/tableHead1"
+                            tools:listitem="@layout/item_bill_details_list" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPay"
+                    android:visibility="gone"
+                    android:text="@string/pay_now"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:backgroundTint="@color/highlight_red"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

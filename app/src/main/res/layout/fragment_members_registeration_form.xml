@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/card_background"
+    tools:context=".ui.memberRegisterRequest.MembersRegistrationFormFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:padding="@dimen/_12sdp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btDownloadForm">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <!--        Member name-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tiMemberName"
+                style="@style/textViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/memberName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="सदस्यको पूरा नाम"
+                    android:imeOptions="actionDone"
+                    android:maxLength="50"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/white"
+                    android:textCursorDrawable="@null" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--        Address -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tiAddress"
+                style="@style/textViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_6sdp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="सदस्यको ठेगाना"
+                    android:imeOptions="actionDone"
+                    android:maxLength="100"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/white"
+                    android:textCursorDrawable="@null" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp">
+
+                <RadioGroup
+                    android:id="@+id/rgGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checkedButton="@id/male"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/male"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:minWidth="@dimen/_100sdp"
+                        android:text="पुरुष" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/female"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="महिला" />
+                </RadioGroup>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--        Citizenship number-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tiCitizenshipNumber"
+                style="@style/textViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_6sdp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/citizenshipNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="नागरिकता नम्बर"
+                    android:imeOptions="actionDone"
+                    android:maxLength="12"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/white"
+                    android:textCursorDrawable="@null" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--        Contact number-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tiContactNumber"
+                style="@style/textViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_6sdp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/contactNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="सम्पर्क नम्बर"
+                    android:imeOptions="actionDone"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/white"
+                    android:textCursorDrawable="@null" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--        father or husband name -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tiFatherOrHusbandName"
+                style="@style/textViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_6sdp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fatherOrHusbandName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="बुबा/श्रीमानको नाम"
+                    android:imeOptions="actionDone"
+                    android:maxLength="50"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/white"
+                    android:textCursorDrawable="@null" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--        grand father/ father in law name-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tiGrandFatherOrFatherInLawName"
+                style="@style/textViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_6sdp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/grandFatherOrFatherInLawName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="हजुरबुवा/ससुराको नाममा"
+                    android:imeOptions="actionDone"
+                    android:maxLength="50"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/white"
+                    android:textCursorDrawable="@null" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--        male count in family-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tiMaleCount"
+                style="@style/textViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_6sdp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/maleCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="पुरुष गणना"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/white"
+                    android:textCursorDrawable="@null" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- female count in family-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tiFemaleCount"
+                style="@style/textViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_6sdp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/femaleCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="महिला गणना"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/white"
+                    android:textCursorDrawable="@null" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btNext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:backgroundTint="@color/primary_color"
+                android:paddingHorizontal="@dimen/_22sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:text="कागजात चयन गर्नुहोस्"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</FrameLayout>

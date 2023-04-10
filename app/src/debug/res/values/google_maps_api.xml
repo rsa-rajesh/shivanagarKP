@@ -1,0 +1,24 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=00:4E:A0:1B:A4:7A:A9:79:4C:F0:82:BC:F4:D8:33:E9:96:CB:1B:73%3Bcom.myproject.setup.ui.navignation
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    com.kalpalogistics.setup.ui.navignation
+
+    SHA-1 certificate fingerprint:
+    00:4E:A0:1B:A4:7A:A9:79:4C:F0:82:BC:F4:D8:33:E9:96:CB:1B:73
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">YOUR_KEY_HERE</string>
+</resources>

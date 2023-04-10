@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/table_row1_color"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tableHead1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvDate1"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_4sdp"
+            android:text="रिडइङ मिति"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".25" />
+
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_4sdp"
+            android:text="भुक्तान मिति"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toEndOf="@id/tvDate1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".25" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/tvUnit"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_4sdp"
+            android:text="एकाइ"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toEndOf="@id/tvDate"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".15" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/tvAmt"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_4sdp"
+            android:text="रकम"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toEndOf="@id/tvUnit"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".18" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/tvDisOrFine"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_4sdp"
+            android:text="छुट/जरिवाना"
+            android:maxLines="1"
+            android:autoSizeMinTextSize="8sp"
+            android:autoSizeMaxTextSize="12sp"
+            app:autoSizeTextType="uniform"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/tvAmt"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".22" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/tvNetAmt"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_4sdp"
+            android:text="जम्मा रकम"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toEndOf="@id/tvDisOrFine"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".2" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

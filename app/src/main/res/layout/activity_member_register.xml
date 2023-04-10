@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.memberRegisterRequest.MemberRegisterActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_layout"/>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    app:layout_constraintTop_toBottomOf="@id/toolbar"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_width="match_parent"
+    android:layout_height="0dp">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btDownloadForm"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:text="फारम डाउनलोड गर्नुहोस्"
+        app:icon="@drawable/ic_pdf_file"
+        android:textColor="@color/white"
+        app:iconTint="@color/highlight_red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/highlight_green" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        app:cardElevation="@dimen/_4sdp"
+        app:cardCornerRadius="@dimen/_8sdp"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:background="@color/card_background"
+        android:layout_marginBottom="@dimen/_12sdp"
+        app:layout_constraintTop_toBottomOf="@id/btDownloadForm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="0dp">
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/nav_host_fragment_container"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:navGraph="@navigation/member_registration_navigation"
+            app:layout_constraintTop_toBottomOf="@id/btDownloadForm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/clError"
+    android:visibility="gone"
+    android:background="@color/lite_gray"
+    app:layout_constraintTop_toBottomOf="@id/toolbar"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_width="match_parent"
+    android:layout_height="0dp">
+
+
+    <TextView
+        android:id="@+id/tvErrorMsg"
+        android:layout_marginHorizontal="@dimen/_22sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/_100sdp"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:text="Sorry Couldn't proceed to online Registration at this moment. \n you can download form for physical registration by clicking button below"
+        android:layout_height="wrap_content"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btDownloadForm2"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:text="फारम डाउनलोड गर्नुहोस्"
+        app:icon="@drawable/ic_pdf_file"
+        app:iconTint="@color/highlight_red"
+        android:textColor="@color/highlight_green"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvErrorMsg"
+        app:strokeColor="@color/highlight_green" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

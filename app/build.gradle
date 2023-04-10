@@ -1,0 +1,166 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
+    id 'kotlin-parcelize'
+}
+
+android {
+    compileSdkVersion 33
+    buildToolsVersion '31.0.0'
+    buildFeatures {
+        buildConfig = true
+    }
+
+    defaultConfig {
+        applicationId "com.heartsun.shivanagarkp"
+        minSdkVersion 21
+        targetSdkVersion 33
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    signingConfigs {
+        debug {
+        }
+        release {
+            // Load your keystore.properties file into the keystoreProperties object.
+            /*def keystorePropertiesFile = rootProject.file("myorder_prod_keystore.properties")
+            def keystoreProperties = new Properties()
+            if (keystorePropertiesFile.exists()) {
+                keystoreProperties.load(new FileInputStream(rootProject.file("myorder_prod_keystore.properties")))
+                keyAlias keystoreProperties['keyAlias']
+                keyPassword keystoreProperties['keyPassword']
+                storePassword keystoreProperties['storePassword']
+                storeFile file(keystoreProperties['storeFile'])
+            } else {
+                println 'Could not find keystore properties file'
+            }*/
+        }
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "Boolean", "enableCrashlytics", "true"
+            manifestPlaceholders = [crashReporting: "true"]
+            resValue "string", "app_name", "Shibanagar khanepani"
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable true
+        }
+        release {
+            buildConfigField "Boolean", "enableCrashlytics", "true"
+            manifestPlaceholders = [crashReporting: "true"]
+            resValue "string", "app_name", "Shibanagar khanepani"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "environment"
+
+    productFlavors {
+        dev {
+            dimension "environment"
+            versionCode 1
+            versionName "0.0.1"
+            buildConfigField "String", "BASE_URL", "\"http://bhanchha.redirectme.net:8008\""
+        }
+        prod {
+            dimension "environment"
+            versionCode 1
+            versionName "0.0.1"
+            // Production Url
+            buildConfigField "String", "BASE_URL", "\"http://bhanchha.redirectme.net:8008\""
+        }
+    }
+    namespace 'com.heartsun.shivanagarkp'
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            def flavor = variant.name
+            def versionName = variant.versionName
+            outputFileName = "Dudhrakshya Devisthan KP_${flavor}_${versionName}.apk"
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation "androidx.security:security-crypto:1.1.0-alpha05"
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0'
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.0"
+    implementation 'com.google.android.material:material:1.8.0'
+    // required to avoid crash on Android 12 API 31
+    implementation("androidx.work:work-runtime-ktx:2.8.0")
+    // Update navigation
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0-alpha07'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.6.0-alpha07'
+    // network tools
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.9"
+    // dev tools
+    implementation "com.jakewharton.timber:timber:5.0.1"
+    implementation 'androidx.annotation:annotation:1.6.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    debugImplementation "com.github.chuckerteam.chucker:library:3.5.2"
+    releaseImplementation "com.github.chuckerteam.chucker:library-no-op:3.5.2"
+    // Koin
+    def koin_version = "2.2.3"
+    implementation "io.insert-koin:koin-androidx-scope:$koin_version"
+    implementation "io.insert-koin:koin-androidx-viewmodel:$koin_version"
+    //stepper library
+    implementation 'com.tbuonomo:dotsindicator:4.3'
+    // Shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+    // LOADING SCREEN
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+    // Glide Image
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
+    // Paging
+    implementation 'androidx.paging:paging-runtime-ktx:3.1.1'
+    //image slider
+    implementation 'com.ouattararomuald:slider-glide:3.0.1' // If you use Glide
+    // Room Components
+    implementation "androidx.room:room-ktx:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    androidTestImplementation "androidx.room:room-testing:$roomVersion"
+    implementation "androidx.room:room-runtime:$roomVersion"
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+    implementation files('libs/commons-net-3.3.jar')
+    implementation files('libs/jtds-1.3.1.jar')
+    implementation 'com.github.dhaval2404:imagepicker:2.1'
+    implementation 'androidx.room:room-common:2.5.0'
+    implementation platform('com.google.firebase:firebase-bom:29.0.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+    implementation 'com.google.firebase:firebase-installations-ktx:17.1.3'
+    implementation ('com.khalti:khalti-android:2.01.02') {
+        transitive = true
+    }
+
+}

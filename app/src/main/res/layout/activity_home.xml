@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.HomeActivity">
+
+    <ScrollView
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:rotation="180"
+                android:src="@drawable/bg_bottom_sheet"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="@dimen/_160sdp"
+                app:tint="@color/primary_color" />
+
+            <ImageView
+                android:visibility="gone"
+                android:src="@drawable/ic_notification_solid"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                app:layout_constraintTop_toTopOf="@id/clHeader"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"/>
+
+            <TextView
+                android:visibility="gone"
+                android:layout_margin="@dimen/_12sdp"
+                android:id="@+id/tvAppID"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/clHeader"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="15dp">
+
+                <ImageView
+                    android:id="@+id/ivLogo"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:src="@drawable/logo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvCompanyName"
+                    android:layout_width="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:gravity="center"
+                    android:text="शिबनगर खानेपानी तथा सरसफाइ उपभोक्ता समिति"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/ivLogo"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvCompanyAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:gravity="center"
+                    android:text="भरतपुर १४, चितवन"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_9sdp"
+                    app:layout_constraintEnd_toEndOf="@id/tvCompanyName"
+                    app:layout_constraintStart_toEndOf="@id/ivLogo"
+                    app:layout_constraintTop_toBottomOf="@id/tvCompanyName" />
+                 </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvImage_slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:cardCornerRadius="@dimen/_6sdp"
+                app:layout_constraintTop_toBottomOf="@id/clHeader">
+
+                <com.ouattararomuald.slider.ImageSlider
+                    app:sliderBackground="@drawable/slider_defult"
+                    android:id="@+id/image_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_120sdp"
+                    android:background="@drawable/loading_anim"
+                    app:layout_constraintCircleRadius="@dimen/_8sdp" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginTop="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@id/cvImage_slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clCards"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_22sdp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvMeroKahiPani"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="@dimen/_4sdp"
+                        app:cardElevation="0dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:strokeColor="#FE0000"
+                        app:strokeWidth="1dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_90sdp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_16sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <TextView
+                                    android:id="@+id/tv1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="मेरो खानेपानी"
+                                    android:textColor="@color/main_text_color"
+                                    android:textSize="@dimen/_18sdp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvNoOfTaps"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="धारा स्ख्या:-"
+                                    android:textColor="@color/sub_text_color"
+                                    android:textSize="@dimen/_12sdp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/tv1" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_60sdp"
+                                android:layout_margin="@dimen/_16sdp"
+                                android:alpha=".8"
+                                android:src="@drawable/ic_water_tap"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintDimensionRatio="1:1"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/card_background"
+                        app:cardCornerRadius="@dimen/_4sdp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintTop_toBottomOf="@id/cvMeroKahiPani">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_50sdp">
+
+
+                            <TextView
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_16sdp"
+                                android:text="लगइन गर्नुहोस्"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:layout_marginStart="@dimen/_12sdp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:layout_marginEnd="@dimen/_12sdp"
+                                android:src="@drawable/ic_key"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                app:tint="@color/white" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:id="@+id/cvMembers"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="#138517"
+                        app:cardCornerRadius="@dimen/_4sdp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintTop_toBottomOf="@id/cvUser">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_50sdp">
+
+                            <TextView
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_16sdp"
+                                android:text="ग्राहकहरु"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:layout_marginStart="@dimen/_12sdp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:layout_marginEnd="@dimen/_12sdp"
+                                android:src="@drawable/crm"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                app:tint="@color/white" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvUser"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/card_background"
+                        app:cardCornerRadius="@dimen/_4sdp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintTop_toBottomOf="@id/cvLogin">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_70sdp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_marginStart="@dimen/_16sdp"
+                                android:layout_width="0dp"
+                                app:layout_constraintWidth_percent=".8"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <TextView
+                                    android:id="@+id/tvName"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="ग्राहकको नाम :- "
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_14sdp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvMemberId"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="दर्ता नम्बर :- "
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_12sdp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:alpha=".1"
+                                android:rotationY="180"
+                                android:src="@drawable/ic_water_tap"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintDimensionRatio="1:1"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="@color/white" />
+
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvSamitee"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_90sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        app:cardBackgroundColor="@color/primary_color"
+                         app:cardCornerRadius="@dimen/_4sdp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintEnd_toStartOf="@id/cvPanikoDar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cvMembers"
+                        >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:layout_gravity="center"
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="@dimen/_50sdp"
+                                    android:src="@drawable/ic_commetee"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintDimensionRatio="1:1"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:tint="@color/white" />
+
+                                <TextView
+                                    android:layout_gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_8sdp"
+                                    android:gravity="center"
+                                    android:text="समिति"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_12sdp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/tv1"/>
+                            </LinearLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvPanikoDar"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_90sdp"
+                        android:layout_marginStart="@dimen/_22sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        app:cardCornerRadius="@dimen/_4sdp"
+                        app:cardElevation="4dp"
+                        app:cardBackgroundColor="@color/primary_color"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/cvSamitee"
+                        app:layout_constraintTop_toBottomOf="@id/cvMembers"
+                        >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:layout_gravity="center"
+                                    app:tint="@color/white"
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="@dimen/_50sdp"
+                                    android:src="@drawable/ic_paniko_dar"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintDimensionRatio="1:1"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"/>
+
+                                <TextView
+                                    android:layout_gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_8sdp"
+                                    android:gravity="center"
+                                    android:text="पानीको दर"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_12sdp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/tv1" />
+
+                            </LinearLayout>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvSuchanaPati"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_90sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        app:cardBackgroundColor="@color/primary_color"
+                        app:cardCornerRadius="@dimen/_4sdp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintEnd_toStartOf="@id/cvSastakoBarama"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cvSamitee"
+                       >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:layout_gravity="center"
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="@dimen/_50sdp"
+                                    android:src="@drawable/ic_noticeboard"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintDimensionRatio="1:1"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:tint="@color/white" />
+
+                                <TextView
+                                    android:layout_gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_8sdp"
+                                    android:gravity="center"
+                                    android:text="सूचना पाटी"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_12sdp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/tv1" />
+
+                            </LinearLayout>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvSastakoBarama"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_90sdp"
+                        android:layout_marginStart="@dimen/_22sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        app:cardBackgroundColor="@color/primary_color"
+                        app:cardCornerRadius="@dimen/_4sdp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/cvSuchanaPati"
+                        app:layout_constraintTop_toBottomOf="@id/cvPanikoDar"
+                        >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:layout_gravity="center"
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="@dimen/_50sdp"
+                                    android:src="@drawable/ic_info"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintDimensionRatio="1:1"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:tint="@color/white" />
+
+                                <TextView
+                                    android:layout_gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_8sdp"
+                                    android:gravity="center"
+                                    android:text="समितिको बारेमा"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_12sdp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/tv1" />
+
+                            </LinearLayout>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvSamparka"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_90sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        app:cardBackgroundColor="@color/primary_color"
+                        app:cardCornerRadius="@dimen/_4sdp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintEnd_toStartOf="@id/cvNayaDhara"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cvSuchanaPati">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:layout_gravity="center"
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="@dimen/_50sdp"
+                                    android:src="@drawable/ic_complain"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintDimensionRatio="1:1"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:tint="@color/white" />
+
+                                <TextView
+                                    android:layout_gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_8sdp"
+                                    android:gravity="center"
+                                    android:text="सम्पर्क"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_12sdp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/tv1" />
+
+                            </LinearLayout>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvNayaDhara"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_90sdp"
+                        android:layout_marginStart="@dimen/_22sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        app:cardBackgroundColor="@color/primary_color"
+                        app:cardCornerRadius="@dimen/_4sdp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/cvSamparka"
+                        app:layout_constraintTop_toBottomOf="@id/cvActivity"
+                        >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:layout_gravity="center"
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="@dimen/_50sdp"
+                                    android:src="@drawable/ic_register"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintDimensionRatio="1:1"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:tint="@color/white" />
+
+                                <TextView
+                                    android:layout_gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_8sdp"
+                                    android:gravity="center"
+                                    android:text="नयाँ धारा जडान"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_12sdp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/tv1" />
+
+                            </LinearLayout>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvActivity"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_90sdp"
+                        android:layout_marginStart="@dimen/_22sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        app:cardBackgroundColor="@color/primary_color"
+                        app:cardCornerRadius="@dimen/_4sdp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/cvSamparka"
+                        app:layout_constraintTop_toBottomOf="@id/cvSastakoBarama"
+                        >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:layout_gravity="center"
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="@dimen/_50sdp"
+                                    android:src="@drawable/ic_calendar"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintDimensionRatio="1:1"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:tint="@color/white" />
+
+                                <TextView
+                                    android:layout_gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_8sdp"
+                                    android:gravity="center"
+                                    android:text="क्रियाकलाप"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_12sdp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/tv1" />
+
+                            </LinearLayout>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvBillDetails"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_90sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        app:cardBackgroundColor="@color/primary_color"
+                        app:cardCornerRadius="@dimen/_4sdp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cvActivity"
+                        app:layout_constraintEnd_toEndOf="@id/cvSamparka"
+                       >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:layout_gravity="center"
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="@dimen/_50sdp"
+                                    android:src="@drawable/ic_bill_icon"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintDimensionRatio="1:1"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:tint="@color/white" />
+
+                                <TextView
+                                    android:layout_gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_8sdp"
+                                    android:gravity="center"
+                                    android:text="बिल विवरण हेर्नुहोस्"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_12sdp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/tv1" />
+
+                            </LinearLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clFooter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clCards">
+
+                    <TextView
+                        android:id="@+id/tvPoweredBy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="powered by:- Heartsun Technology"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvVersion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="version: 1.1.1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

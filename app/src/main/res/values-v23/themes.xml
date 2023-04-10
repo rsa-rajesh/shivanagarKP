@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Khanipani.OnBoarding" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="colorPrimaryVariant">@color/primary_color</item>
+        <item name="android:windowSharedElementsUseOverlay">false</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowExitTransition">@transition/activity_main_exit</item>
+        <item name="android:windowReenterTransition">@transition/activity_main_reenter</item>
+    </style>
+</resources>

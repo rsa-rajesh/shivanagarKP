@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.waterRate.WaterRateActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_layout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_12sdp"
+                android:paddingBottom="@dimen/_42sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="क्यालकुलेटर"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_22sdp"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvCalculator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    app:cardBackgroundColor="@color/card_background"
+                    app:cardCornerRadius="@dimen/_4sdp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                  >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_12sdp">
+
+                        <TextView
+                            android:id="@+id/tvCalcuTitle1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ग्राहक प्रकार चयन गर्नुहोस्"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/cgType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvCalcuTitle1"
+                            app:selectionRequired="true"
+                            app:singleSelection="true">
+
+                        </com.google.android.material.chip.ChipGroup>
+
+                        <TextView
+                            android:id="@+id/tvCalcuTitle2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="धाराको आकार चयन गर्नुहोस्"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/cgType" />
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/cgSize"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            app:checkedChip="@id/chip0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvCalcuTitle2"
+                            app:selectionRequired="true"
+                            app:singleSelection="true">
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip0.5"
+                                style="@style/Colors_Widget.MaterialComponents.Chip.Choice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0.5" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip1.0"
+                                style="@style/Colors_Widget.MaterialComponents.Chip.Choice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1.0"
+                                android:visibility="gone" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip1.5"
+                                style="@style/Colors_Widget.MaterialComponents.Chip.Choice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1.5"
+                                android:visibility="gone" />
+
+                        </com.google.android.material.chip.ChipGroup>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tiUnit"
+                            style="@style/textViewStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:hint="एकाई"
+                            app:layout_constraintTop_toBottomOf="@id/cgSize">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etUnit"
+                                android:textColor="@color/white"
+                                android:textCursorDrawable="@null"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="number"
+                                android:maxLength="4" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clUnit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tiUnit">
+
+                            <TextView
+                                android:id="@+id/tvAmount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0.00"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_32sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvAmountTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:layout_marginEnd="@dimen/_8sdp"
+                                android:text="कुल: रु."
+                                android:alpha=".8"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_12sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/tvAmount"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:text="शुल्क विवरण"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_22sdp"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvCommunityRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    app:cardBackgroundColor="@color/card_background"
+                    app:cardCornerRadius="@dimen/_4sdp"
+                    app:cardElevation="4dp"
+                    >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvListTitle1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/_12sdp"
+                            android:paddingTop="@dimen/_12sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:text="व्यक्तिगत"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/tableHead1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:background="@color/primary_color"
+                            app:layout_constraintTop_toBottomOf="@id/tvListTitle1">
+
+                            <TextView
+                                android:id="@+id/tvFrom"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:padding="@dimen/_4sdp"
+                                android:text="कहाँबाट"
+                                android:textColor="@color/background"
+                                android:textSize="@dimen/_12sdp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintWidth_percent=".25" />
+
+                            <TextView
+                                android:id="@+id/tvTo"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/_4sdp"
+
+                                android:text="कहाँसम्म"
+                                android:textColor="@color/background"
+                                android:textSize="@dimen/_12sdp"
+                                app:layout_constraintStart_toEndOf="@id/tvFrom"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintWidth_percent=".25" />
+
+                            <TextView
+                                android:id="@+id/tvRate"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginEnd="@dimen/_8sdp"
+                                android:gravity="end"
+                                android:padding="@dimen/_4sdp"
+                                android:text="रकम"
+                                android:textColor="@color/background"
+                                android:textSize="@dimen/_12sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintWidth_percent=".4" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvCommunityRate"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toBottomOf="@id/tableHead1"
+                            tools:listitem="@layout/item_unit_rate_list" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvPersonalRate"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    app:cardBackgroundColor="@color/card_background"
+                    app:cardCornerRadius="@dimen/_4sdp"
+                    app:cardElevation="4dp"
+                    >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tvListTitle2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/_12sdp"
+                            android:paddingTop="@dimen/_12sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:text="सामुदायिक"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/tableHead2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:background="@color/primary_color"
+                            app:layout_constraintTop_toBottomOf="@id/tvListTitle2">
+
+                            <TextView
+                                android:id="@+id/tvFrom2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:padding="@dimen/_4sdp"
+                                android:text="कहाँबाट"
+                                android:textColor="@color/background"
+                                android:textSize="@dimen/_12sdp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintWidth_percent=".25" />
+
+                            <TextView
+                                android:id="@+id/tvTo2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/_4sdp"
+
+                                android:text="कहाँसम्म"
+                                android:textColor="@color/background"
+                                android:textSize="@dimen/_12sdp"
+                                app:layout_constraintStart_toEndOf="@id/tvFrom2"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintWidth_percent=".25" />
+
+                            <TextView
+                                android:id="@+id/tvRate2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginEnd="@dimen/_8sdp"
+                                android:gravity="end"
+                                android:padding="@dimen/_4sdp"
+                                android:text="रकम"
+                                android:textColor="@color/background"
+                                android:textSize="@dimen/_12sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintWidth_percent=".4" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvPersonalRate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scrollbars="none"
+                            app:layout_constraintTop_toBottomOf="@id/tableHead2"
+                            tools:listitem="@layout/item_unit_rate_list" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

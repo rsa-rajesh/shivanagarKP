@@ -1,0 +1,67 @@
+<resources>
+
+    <string name="onboarding_slide1_title">Create an account</string>
+    <string name="onboarding_slide1_desc">User will be able to give you live, chat and meet
+        with people nearby.</string>
+
+    <string name="onboarding_slide2_title">Login to your account</string>
+    <string name="onboarding_slide2_desc">Connect helps you locate the people around you who
+        are closest from your home.</string>
+
+    <string name="onboarding_slide3_title">Login to your account</string>
+    <string name="onboarding_slide3_desc">User will be able to give you live, chat and meet
+        with people nearby.</string>
+
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+
+    <string name="onboard_first_title">सङ्गसँग सम्पर्क गर्नुहोस्</string>
+    <string name="onboard_first_details">सङ्गठनसँग सम्पर्क गर्नुहोस् र आफ्नो गुनासो र अनुरोध पेश गर्नुहोस् । अनलाइन वा कल मार्फत ।</string>
+
+    <string name="onboard_second_title">रकम गणना गर्नुहोस्</string>
+    <string name="onboard_second_details">तपाईंको मीटर पढाइ प्राप्त गर्नुहोस् वा मीटर पढाइ अनुसार भुक्तानी गर्न जम्मा रकम गणना गर्नुहोस् ।</string>
+
+    <string name="onboard_third_title">संगठन र संगठन सदस्यको बारेमा</string>
+    <string name="onboard_third_details">हाम्रो एप मार्फत संगठन र संगठन सदस्यको बारेमा जानकारी लिनुहोस् र यदि नीति परिवर्तन भयो भने सूचना प्राप्त गर्नुहोस् ।</string>
+
+    <string name="read_more">पूरा पढ्नुहोस् …</string>
+    <string name="app_version">0.0.1</string>
+
+    <string-array name="month">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+
+    <string name="loading_app_data">Loading App Data…</string>
+    <string name="subscribe_to_weather">Subscribe To शिबनगर खानेपानी</string>
+    <string name="log_token">Log Token</string>
+    <string name="msg_subscribed">Subscribed to शिबनगर खानेपानी topic</string>
+    <string name="msg_token_fmt" translatable="false">FCM registration Token: %s</string>
+    <string name="default_notification_channel_id" translatable="false">शिबनगर खानेपानी</string>
+    <!--
+        This is the name that users will see when interacting with this channel.
+        It should describe the category of notifications that will be sent through this channel
+     -->
+    <!-- [START fcm_default_icon_string] -->
+    <string name="default_notification_channel_name" translatable="true">शिबनगर खानेपानी</string>
+    <!-- [END fcm_default_icon_string] -->
+    <string name="msg_subscribe_failed">Failed to subscribe to weather topic</string>
+    <string name="fcm_message">FCM Message</string>
+    <string name="sorry_no_complaint_posted_yet">माफ गर्नुहोस् !! अहिलेसम्म कुनै उजुरी पोस्ट गरिएको छैन</string>
+    <string name="pay_now">Pay now</string>
+    <string name="payment_process_cancelled">Payment Process cancelled</string>
+    <string name="payment_message"><![CDATA[<b>Confirm Payment For:- </b><br>Mid:%1$s<br>Name:%2$s<br>Address:%3$s<br>Pay Amount:<b>%4$s</b>]]></string>
+    <string name="no_due_amount_to_pay">तपाईंसँग भुक्तान गर्नुपर्ने कुनै पनि रकम छैन</string>
+    <string name="other_amount_remaining"><![CDATA[तपाईंको अन्य बिल रकमहरू बाँकी छन् । <br> कृपया खानेपानी कार्यालय जानुहोस ।]]></string>
+    <string name="defult1">This is where the message \n will come, showing update details and all.</string>
+</resources>

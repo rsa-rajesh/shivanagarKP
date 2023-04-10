@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.about.AboutAppActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_12sdp"
+        android:orientation="vertical"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_arrow"
+                android:tint="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="UseAppTint" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/ivBack">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivAppIcon"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="@dimen/_90sdp"
+                        android:src="@drawable/logo"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvAppName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:gravity="center"
+                        android:text="शिबनगर खानेपानी"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/ivAppIcon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ivAppIcon" />
+
+                    <TextView
+                        android:id="@+id/tvAppVersion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintEnd_toStartOf="@id/ivAppIcon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvAppName" />
+
+                    <TextView
+                        android:id="@+id/tvCheckUpdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:gravity="center"
+                        android:text="check for update"
+                        android:textColor="#59114D"
+                        android:textSize="@dimen/_8sdp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toStartOf="@id/ivAppIcon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvAppVersion" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:gravity="start"
+                    android:text="एप्लिकेसनको बारेमा"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    app:cardBackgroundColor="@color/card_background"
+                    app:cardCornerRadius="@dimen/_4sdp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvAboutApp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="@dimen/_12sdp"
+                            android:text="शिबनगर खानेपानी एप्लिकेसन शिबनगर खानेपानी तथा सरसफाइ उपभोक्ता समितिका सदस्यहरुका लागि
+डिजाइन गरिएको mobile एप्लिकेसन हो |"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:gravity="start"
+                    android:text="एप्लिकेसन मालिक"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    app:cardBackgroundColor="@color/card_background"
+                    app:cardCornerRadius="@dimen/_4sdp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clHeader2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_12sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/ivLogo"
+                                android:layout_width="@dimen/_60sdp"
+                                android:layout_height="@dimen/_60sdp"
+                                android:src="@drawable/logo"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                            <TextView
+                                android:id="@+id/tvCompanyTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:layout_marginEnd="@dimen/_12sdp"
+                                android:gravity="center"
+                                android:text="शिबनगर खानेपानी तथा सरसफाइ उपभोक्ता समिति"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_18sdp"
+                                app:layout_constraintEnd_toStartOf="@id/ivLogo"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/ivLogo" />
+
+                            <TextView
+                                android:id="@+id/tvCompanyAddress"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_12sdp"
+                                android:gravity="center"
+                                android:text="भरतपुर १४, चितवन"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_10sdp"
+                                app:layout_constraintEnd_toStartOf="@id/ivLogo"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tvCompanyTitle" />
+
+                            <TextView
+                                android:id="@+id/tvCompanyContact"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_12sdp"
+                                android:gravity="center"
+                                android:text="टेलिफोन नम्वर:- 9844246601"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_10sdp"
+                                app:layout_constraintEnd_toStartOf="@id/ivLogo"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tvCompanyAddress" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:gravity="start"
+                    android:text="एप्लिकेसन निर्माता"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    app:cardBackgroundColor="@color/card_background"
+                    app:cardCornerRadius="@dimen/_4sdp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="@color/primary_color"
+                    app:strokeWidth="1dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clHeader3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_12sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/ivDeveloperLogo"
+                                android:layout_width="@dimen/_60sdp"
+                                android:layout_height="@dimen/_60sdp"
+                                android:src="@drawable/heartsun_stamp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvDeveloperName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:layout_marginEnd="@dimen/_12sdp"
+                                android:gravity="center"
+                                android:text="Heartsun Technology"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_16sdp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@id/ivDeveloperLogo"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/ivDeveloperLogo" />
+
+                            <TextView
+                                android:id="@+id/tvDeveloperDetails"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_12sdp"
+                                android:gravity="center"
+                                android:text="Bharatpur 10 Chitwan Nepal \n
+Mobile: 9855059322 \n
+Office: 056-521790 \n
+Email: tech.heartsun@gmail.com \n"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_10sdp"
+                                app:layout_constraintEnd_toStartOf="@id/ivDeveloperLogo"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tvDeveloperName" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

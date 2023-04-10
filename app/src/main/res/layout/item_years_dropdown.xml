@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:textSize="@dimen/_14sdp"
+    android:text="2012"
+    android:paddingHorizontal="@dimen/_4sdp"
+    android:paddingVertical="@dimen/_4sdp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:background="@color/primary_color"
+    android:textColor="@color/white"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"/>
+
+

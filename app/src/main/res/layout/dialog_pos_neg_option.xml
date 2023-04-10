@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="8dp"
+    app:cardBackgroundColor="@color/card_background"
+    app:cardCornerRadius="16dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="12dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clHeading"
+            android:paddingHorizontal="@dimen/_12sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/logo"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/tvAppName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="शिबनगर खानेपानी तथा सरसफाइ उपभोक्ता समिति"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/ivLogo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivLogo"
+                app:layout_constraintTop_toTopOf="@id/ivLogo"
+                 />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/background"
+            app:layout_constraintTop_toBottomOf="@id/clHeading" />
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            tools:text="@string/defult1" />
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/tvNegAction"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:gravity="center"
+            android:paddingVertical="8dp"
+            android:textColor="@color/highlight_red"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/viewTwo"
+            app:layout_constraintEnd_toStartOf="@id/viewTwo"
+            app:layout_constraintHorizontal_weight="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/viewTwo"
+            tools:text="Cancel" />
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/tvPosAction"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:gravity="center"
+            android:paddingVertical="8dp"
+            android:textColor="@color/highlight_green"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/viewTwo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.5"
+            app:layout_constraintStart_toEndOf="@id/viewTwo"
+            app:layout_constraintTop_toTopOf="@id/viewTwo"
+            tools:text="Okay" />
+
+        <View
+            android:alpha=".6"
+            android:id="@+id/viewTwo"
+            android:layout_width="1dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvPosAction"
+            app:layout_constraintStart_toEndOf="@id/tvNegAction"
+            app:layout_constraintTop_toBottomOf="@id/tvMessage" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

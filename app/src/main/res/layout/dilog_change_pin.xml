@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_260sdp"
+    android:layout_height="wrap_content"
+    android:background="@null">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvMeroKahiPani"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_4sdp"
+        app:cardBackgroundColor="@color/card_background"
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/primary_color"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/btClose"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/ic_close_icon"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                app:tint="@android:color/holo_red_dark" />
+
+
+            <TextView
+                android:layout_marginStart="@dimen/_12sdp"
+                android:id="@+id/title1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="पिन परिवर्तन गर्नुहोस्"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+
+            <!--        old pin -->
+            <com.google.android.material.textfield.TextInputLayout
+                app:layout_constraintTop_toBottomOf="@id/title1"
+                android:id="@+id/tiOldPin"
+                android:layout_marginBottom="@dimen/_12sdp"
+                style="@style/textViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/oldPin"
+                    android:textColor="@color/white"
+                    android:textCursorDrawable="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="पुरानो पिन कोड"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:imeOptions="actionDone"
+                    android:selectAllOnFocus="true"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--        new pin -->
+            <com.google.android.material.textfield.TextInputLayout
+                app:layout_constraintTop_toBottomOf="@id/tiOldPin"
+                android:id="@+id/tiNewPin"
+                android:layout_marginBottom="@dimen/_12sdp"
+                style="@style/textViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/newPin"
+                    android:textColor="@color/white"
+                    android:textCursorDrawable="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="नयाँ पिन कोड"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:imeOptions="actionDone"
+                    android:selectAllOnFocus="true"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--        confirm pin -->
+            <com.google.android.material.textfield.TextInputLayout
+                app:layout_constraintTop_toBottomOf="@id/tiNewPin"
+                android:id="@+id/tiConfirmPin"
+                android:layout_marginBottom="@dimen/_12sdp"
+                app:layout_constraintBottom_toTopOf="@id/btChange"
+                style="@style/textViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/confirmPin"
+                    android:textColor="@color/white"
+                    android:textCursorDrawable="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="नयाँ पिन कोड यकिन गर्नुहोस्"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:imeOptions="actionDone"
+                    android:selectAllOnFocus="true"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btChange"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:backgroundTint="@color/highlight_red"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingVertical="@dimen/_4sdp"
+                android:text="परिवर्तन गर्नुहोस्"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

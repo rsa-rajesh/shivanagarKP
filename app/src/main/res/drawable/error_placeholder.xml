@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:bottom="@dimen/anim_loading_margin"
+        android:drawable="@drawable/ic_image_error"
+        android:left="@dimen/anim_loading_margin"
+        android:right="@dimen/anim_loading_margin"
+        android:top="@dimen/anim_loading_margin" />
+</layer-list>

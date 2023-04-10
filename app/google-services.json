@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "227118764438",
+    "project_id": "dudhrakshadevisthan",
+    "storage_bucket": "dudhrakshadevisthan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:227118764438:android:a10a2bdd99b27876c3cdb7",
+        "android_client_info": {
+          "package_name": "com.heartsun.shivanagarkp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "227118764438-ap3nss21euqssa8ionfpbp2kde90tfig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRkOUctFh_I9qTogFSuD5BHOp-OF5DmY8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "227118764438-ap3nss21euqssa8ionfpbp2kde90tfig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.paymentActivity.PaymentActivity">
+
+    <include
+        layout="@layout/toolbar_layout"
+        android:id="@+id/toolbar"/>
+
+
+    <TextView
+        android:id="@+id/tvDetail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:alpha=".6"
+        android:text="Please select an option to pay your bill."
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <GridLayout
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:id="@+id/simpleGridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:alignmentMode="alignBounds"
+        android:columnCount="2"
+        android:orientation="horizontal"
+        android:padding="@dimen/_4sdp"
+        android:rowOrderPreserved="false"
+        android:useDefaultMargins="true"
+        app:layout_constraintTop_toBottomOf="@id/tvDetail">
+
+
+        <ImageButton
+            android:layout_row="0"
+            android:layout_column="0"
+            android:id="@+id/btCounterPay"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill_horizontal"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:background="@drawable/costume_esewa_btn"
+            android:padding="@dimen/_12sdp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_counter_pay"
+            android:visibility="gone" />
+
+        <com.khalti.widget.KhaltiButton
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_gravity="fill_horizontal"
+            android:layout_columnWeight="1"
+            android:id="@+id/btKhalti"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btCounterPay"
+            app:layout_constraintTop_toBottomOf="@id/tvDetail"
+            app:khalti_button_style="khalti" />
+
+        <com.khalti.widget.KhaltiButton
+            android:layout_gravity="fill_horizontal"
+            android:id="@+id/btEbanking"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@id/btMbanking"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btCounterPay"
+           app:khalti_button_style="e_banking" />
+
+        <com.khalti.widget.KhaltiButton
+            android:layout_gravity="fill_horizontal"
+            android:layout_columnWeight="1"
+            android:id="@+id/btMbanking"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btEbanking"
+            app:layout_constraintTop_toBottomOf="@id/btCounterPay"
+            app:khalti_button_style="m_banking" />
+
+        <com.khalti.widget.KhaltiButton
+            android:layout_gravity="fill_horizontal"
+            android:layout_columnWeight="1"
+            android:id="@+id/btSCT"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@id/btMbanking"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btEbanking"
+            app:khalti_button_style="sct" />
+
+        <com.khalti.widget.KhaltiButton
+
+            android:layout_gravity="fill_horizontal"
+            android:layout_columnWeight="1"
+            android:id="@+id/btConnectIps"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btEbanking"
+            app:layout_constraintTop_toBottomOf="@id/btEbanking"
+            app:khalti_button_style="connect_ips" />
+
+        <ImageButton
+            android:id="@+id/btIMEPay"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill_horizontal"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:background="@drawable/costume_esewa_btn"
+            android:padding="@dimen/_4sdp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_imepaylogo"
+            android:visibility="gone" />
+
+    </GridLayout>
+
+    <LinearLayout
+        android:id="@+id/llNoPaymentPartner"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/lite_gray"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <TextView
+            android:gravity="center"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/black"
+            android:text="कुनै पनि अनलाइन भुक्तानी साझेदार फेला परेन ! \n कृपया पुन: प्रयास गर्नुहोस्"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btRetry"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="पुन: प्रयास गर्नुहोस्"
+            android:textSize="@dimen/_16sdp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:paddingTop="@dimen/_6sdp"
+    app:layout_constraintTop_toTopOf="parent">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clBubble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_9sdp"
+        android:background="@drawable/complain_sent_chat_bobble"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="@dimen/_240sdp"
+            android:paddingHorizontal="@dimen/_16sdp"
+            android:paddingVertical="@dimen/_8sdp"
+            android:text="hello, hello! hello, hello!hello, hello!hello, hello!hello, hello!hello, hello!hello, hello!hello, hello!"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_9sdp"
+        app:layout_constraintStart_toStartOf="@id/clBubble"
+        app:layout_constraintTop_toBottomOf="@id/clBubble"
+        android:layout_marginStart="@dimen/_16sdp"
+        tools:text="May 29-2021" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

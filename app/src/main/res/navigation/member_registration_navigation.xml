@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/member_registration_navigation"
+    app:startDestination="@id/membersRegistrationFormFragment">
+
+    <fragment
+        android:id="@+id/membersRegistrationFilesFragment"
+        android:name="com.heartsun.shivanagarkp.ui.memberRegisterRequest.MembersRegistrationFilesFragment"
+        android:label="fragment_members_registeration_files"
+        tools:layout="@layout/fragment_members_registeration_files" >
+        <action
+            android:id="@+id/action_membersRegistrationFilesFragment_to_membersRegistrationFormFragment"
+            app:destination="@id/membersRegistrationFormFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/membersRegistrationFormFragment"
+        android:name="com.heartsun.shivanagarkp.ui.memberRegisterRequest.MembersRegistrationFormFragment"
+        android:label="fragment_members_registeration_form"
+        tools:layout="@layout/fragment_members_registeration_form" >
+        <action
+            android:id="@+id/action_membersRegistrationFormFragment_to_membersRegistrationFilesFragment"
+            app:destination="@id/membersRegistrationFilesFragment" />
+    </fragment>
+</navigation>

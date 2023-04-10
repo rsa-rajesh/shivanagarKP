@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/onboardingRoot"
+    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/oboarding_main_scene">
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/slider1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+        android:id="@+id/page_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:dotsColor="@color/primary_color"
+        app:dotsCornerRadius="8dp"
+        app:dotsSize="@dimen/_8sdp"
+        app:dotsSpacing="@dimen/_8sdp"
+        app:dotsStrokeColor="@color/primary_color"
+        app:dotsStrokeWidth="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline"
+         />
+
+
+
+
+    <TextView
+        android:textSize="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:text="@string/onboard_first_title"
+        android:id="@+id/titleTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_22sdp"
+        android:layout_marginEnd="@dimen/_22sdp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/page_indicator" />
+
+    <TextView
+        android:layout_marginTop="@dimen/_8sdp"
+        android:text="@string/onboard_first_details"
+        android:id="@+id/descTV"
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/_22sdp"
+        android:layout_marginEnd="@dimen/_22sdp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="@dimen/_10sdp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/titleTv" />
+
+    <Button
+        android:id="@+id/startBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_32sdp"
+        android:backgroundTintMode="src_over"
+        android:backgroundTint="@color/highlight_red"
+        android:onClick="nextClicked"
+        android:paddingTop="@dimen/_4sdp"
+        android:text="@string/next"
+        android:textColor="@color/colorWhite"
+        app:cornerRadius="@dimen/_4sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent=".4" />
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
